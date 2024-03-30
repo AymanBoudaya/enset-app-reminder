@@ -1,22 +1,51 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Computer",
-            "price": 5600,
-            "checked": true
-        },
-        {
-            "id": 2,
-            "name": "Printer",
-            "price": 600,
-            "checked": true
-        },
-        {
-            "id": 3,
-            "name": "Smart Phone",
-            "price": 1300,
-            "checked": false
-        }
-    ]
+  "users": [
+    { "id" : "user1", "password" : "cGFzc3dvcmQ=", "roles" : ["USER"], "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsIm5hbWUiOiJBeW1hbiBCb3VkYXlhIiwiaWF0IjoxNTE2MjM5MDIyLCJyb2xlcyI6WyJVU0VSIl19.m9Mr6kv54dAfZT2x5J7SotcATjc-VZdG_atIUxjUrTY"},
+    { "id" : "user2", "password" : "cGFzc3dvcmQ=", "roles" : ["USER"], "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsIm5hbWUiOiJBeW1hbiBCb3VkYXlhIiwiaWF0IjoxNTE2MjM5MDIyLCJyb2xlcyI6WyJVU0VSIl19.IyvnkS8_y6L0tq30GVSu5Wa8sTNRLQcYbNj7jtF3aCc"},
+    { "id" : "admin", "password" : "cGFzc3dvcmQ=", "roles" : ["USER","ADMIN"], "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJBeW1hbiBCb3VkYXlhIiwiaWF0IjoxNTE2MjM5MDIyLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXX0.2vcWjnSuDfi3yl1ErDHcGOz8jQuFANnIHw153iKMxmU"}
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Computer dell",
+      "price": "3050",
+      "checked": false
+    },
+    {
+      "id": "2",
+      "name": "Smart Phone",
+      "price": 1300,
+      "checked": false
+    },
+    {
+      "id": "6cf7",
+      "name": "Samsung A21",
+      "price": 400,
+      "checked": false
+    },
+    {
+      "id": "b3a2",
+      "name": "Smart watch xiaomi",
+      "price": 249,
+      "checked": false
+    },
+    {
+      "name": "XV-201",
+      "price": "3000",
+      "checked": false,
+      "id": "ysChEZp"
+    },
+    {
+      "name": "velo scott",
+      "price": "1500",
+      "checked": false,
+      "id": "y6epNnS"
+    },
+    {
+      "id": "RD-b-70",
+      "name": "CV-0301",
+      "price": "30",
+      "checked": false
+    }
+  ]
 }

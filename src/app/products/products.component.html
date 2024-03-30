@@ -1,28 +1,98 @@
 <div class="p-3">
-    <div class="card">   
-        <div class="card-body">
-            <h3>Products Component</h3>
-            <table class="table">
-               <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Checked</th>
-                </tr>
-               </thead>
-               <tbody>
-                <tr *ngFor="let product of products">
-                    <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
-                    <td>
-                        <button (click)="handleCheckProduct(product)" class="btn btn-outline-success">
-                            <i [class]="product.checked?'bi bi-check':'bi bi-circle'"> </i>
-                        </button>
-                    </td>
-
-                </tr>
-               </tbody> 
-            </table>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            [(ngModel)]="appState.productState.keyword"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+            (keydown.enter)="searchProducts()"
+          />
+          <div class="input-group-append">
+            <button
+              (click)="searchProducts()"
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Search <i class="bi bi-search"></i>
+            </button>
+          </div>
         </div>
+      </div>
+      <h3>Products Component</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Designation</th>
+            <th>Building</th>
+            <th>Price</th>
+            <th>Checked</th>
+            <th *ngIf='appState.authState.roles.includes("ADMIN")'>Delete</th>
+            <th *ngIf='appState.authState.roles.includes("ADMIN")'>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of appState.productState.products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.type }}</td>
+            <td>{{ product.designation }}</td>
+            <td>{{ product.building }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+              <button
+                (click)="handleCheckProduct(product)"
+                class="btn btn-outline-success"
+              >
+                <i [class]="product.checked ? 'bi bi-check' : 'bi bi-circle'">
+                </i>
+              </button>
+            </td>
+            <td *ngIf='appState.authState.roles.includes("ADMIN")'>
+              <button
+                (click)="handleDelete(product)"
+                class="btn btn-outline-danger"
+              >
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+            <td *ngIf='appState.authState.roles.includes("ADMIN")'>
+              <button
+                (click)="handleEdit(product)"
+                class="btn btn-outline-success"
+              >
+                <i class="bi bi-pencil"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="nav nav-pills">
+        <li
+          *ngFor="
+            let page of [].constructor(this.appState.productState.totalPages);
+            let i = index
+          "
+        >
+          <button
+            (click)="handleGotoPage(i + 1)"
+            [ngClass]="
+              this.appState.productState.currentPage == i + 1
+                ? 'btn-success'
+                : 'btn-outline-success'
+            "
+            class="btn m-1"
+          >
+            {{ i + 1 }}
+          </button>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>

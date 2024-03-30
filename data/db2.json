@@ -1,0 +1,10 @@
+{
+    "products": [
+      { "id": "1", "name": "Computer", "price": 2300, "checked": false },
+      { "id": "2", "name": "Smart Phone", "price": 1300, "checked": false },
+      { "id": "3", "name": "Phone", "price": 200, "checked": false },
+      { "id": "5ca8", "name": "Printer", "price": 530, "checked": true },
+      { "id": "6cf7", "name": "Samsung A21", "price": 400, "checked": false },
+      { "id": "b3a2", "name": "Smart watch xiaomi", "price": 249, "checked": false }
+    ]
+  }
